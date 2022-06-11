@@ -16,6 +16,7 @@ body {
   left: 0;
   top: 0;
   align-items: center;
+  z-index: 10;
 }
 .barra-topo{
   background-color: #CF2B2B;
@@ -69,16 +70,16 @@ body {
 }
 .text{
   position: relative;
+  width: 100%;
 }
-.check-icon{
-  display: inline;
-}
-.text ion-icon{
+
+ion-icon{
   color: #32B72F;
   font-size: 16px;
   position: absolute;
   right: 0;
   bottom: 0;
+  display: none;
 }
 .text h1 {
   font-size: 16px;
@@ -144,6 +145,9 @@ body {
 }
 .esconder {
   display: none;
+}
+.mostrar{
+  display: inline;
 }
 .selecionado {
   border: 5px solid #32B72F;
