@@ -219,6 +219,13 @@ ion-icon{
 .esconder {
   display: none;
 }
+.botao:hover{
+  cursor: pointer;
+}
 .mostrar {
   display: inline;
+}
+.confirmar-pedido .buttons a{
+  text-decoration: none;
+  color: #50D074;
 }
