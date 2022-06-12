@@ -88,10 +88,9 @@ function confirmarPedido() {
     parseFloat(precoComida.slice(3)) +
     parseFloat(precoBebida.slice(3)) +
     parseFloat(precoSobremesa.slice(3));
+  //configurando o botao para whatsapp
+  const botaoFinalizar = confirmarArea.querySelector(".buttons div:first-child");
 
-  const botaoFinalizar = confirmarArea.querySelector(
-    ".buttons div:first-child"
-  );
   let texto = `Olá, gostaria de fazer o pedido:
   - Prato: ${comida}
   - Bebida: ${bebida}
@@ -101,18 +100,12 @@ function confirmarPedido() {
   Nome: ${cliente}
   Endereço: ${endereco}`;
   texto = encodeURIComponent(texto);
-  let url = `https://wa.me/+5562999649591?text=${texto}`;
+  let url = `https://wa.me/+5562999999999?text=${texto}`;
   botaoFinalizar.innerHTML = `<a href=${url} target="_blank">Tudo certo, pode pedir!</a>`;
 
-  confirmarArea.querySelector(
-    ".items div:first-child"
-  ).innerHTML = `<span>${comida}</span><span>${precoComida}</span>`;
-  confirmarArea.querySelector(
-    ".items div:nth-child(2)"
-  ).innerHTML = `<span>${bebida}</span><span>${precoBebida}</span>`;
-  confirmarArea.querySelector(
-    ".items div:nth-child(3)"
-  ).innerHTML = `<span>${sobremesa}</span><span>${precoSobremesa}</span>`;
+  confirmarArea.querySelector(".items div:first-child").innerHTML = `<span>${comida}</span><span>${precoComida}</span>`;
+  confirmarArea.querySelector(".items div:nth-child(2)").innerHTML = `<span>${bebida}</span><span>${precoBebida}</span>`;
+  confirmarArea.querySelector(".items div:nth-child(3)").innerHTML = `<span>${sobremesa}</span><span>${precoSobremesa}</span>`;
 
   displayTotal.innerHTML = `R$ ${total.toFixed(2)}`;
 
@@ -122,5 +115,4 @@ function confirmarPedido() {
 function confirmarPedidoFechar(){
   const confirmarArea = document.querySelector(".area-confirmar-pedido");
   confirmarArea.classList.toggle("esconder");
-
 }
