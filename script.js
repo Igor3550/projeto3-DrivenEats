@@ -69,3 +69,26 @@ function verificarFinalizacao(){
     botaoFinalizar.classList.remove('esconder');
   }
 }
+
+function confirmarPedido(){
+  const confirmarArea = document.querySelector('.area-confirmar-pedido');
+
+  const comida = comidaSelecionada.querySelector('h1').innerHTML;
+  const bebida = bebidaSelecionada.querySelector('h1').innerHTML;
+  const sobremesa = sobremesaSelecionada.querySelector('h1').innerHTML;
+  const precoComida = comidaSelecionada.querySelector('p').innerHTML;
+  const precoBebida = bebidaSelecionada.querySelector('p').innerHTML;
+  const precoSobremesa = sobremesaSelecionada.querySelector('p').innerHTML;
+
+  const displayTotal = document.querySelector('.total');
+  //soma os preços tirando o "R$" q é uma string para n dar o erro de NaN
+  const total = (parseFloat(precoComida.slice(3)) + parseFloat(precoBebida.slice(3)) + parseFloat(precoSobremesa.slice(3)));
+
+  confirmarArea.querySelector('.items div:first-child').innerHTML = `<span>${comida}</span><span>${precoComida}</span>`;
+  confirmarArea.querySelector('.items div:nth-child(2)').innerHTML = `<span>${bebida}</span><span>${precoBebida}</span>`;
+  confirmarArea.querySelector('.items div:nth-child(3)').innerHTML = `<span>${sobremesa}</span><span>${precoSobremesa}</span>`;
+
+  displayTotal.innerHTML = `R$ ${total.toFixed(2)}`;
+
+  confirmarArea.classList.toggle('esconder');
+}

@@ -68,6 +68,12 @@ body {
   margin: 5px;
   border: 0;
 }
+.seletor img{
+  width: 144px;
+  height: 87px;
+  object-fit: cover;
+  border-radius: 5px;
+}
 .text{
   position: relative;
   width: 100%;
@@ -143,12 +149,76 @@ ion-icon{
 .cinza {
   background-color: #CBCBCB;
 }
+.selecionado {
+  border: 5px solid #32B72F;
+}
+.area-confirmar-pedido{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+.confirmar-pedido{
+  width: 377px;
+  height: 357px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #50D074;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.confirmar-pedido .items{
+  width: 100%;
+}
+.confirmar-pedido .items div:last-child{
+  font-weight: 700;
+}
+.confirmar-pedido .items div{
+  margin: 20px;
+  font-weight: 400;
+  font-size: 22px;
+  display: flex;
+  justify-content: space-between;
+}
+.confirmar-pedido .titulo {
+  margin: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  font-size: 22px;
+}
+.confirmar-pedido .buttons{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.confirmar-pedido .buttons div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #50D074;
+  margin: 0px 20px;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  height: 52px;
+  border-radius: 25px;
+}
+.confirmar-pedido .buttons div:first-child{
+  background-color: white;
+  color: #50D074;
+}
 .esconder {
   display: none;
 }
-.mostrar{
+.mostrar {
   display: inline;
-}
-.selecionado {
-  border: 5px solid #32B72F;
 }
